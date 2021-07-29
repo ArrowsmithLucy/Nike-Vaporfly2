@@ -16,6 +16,9 @@
         --color-white: #FCFCFC;
         /* All v similar colors. necessary? */
         /* contrast ratio fail to #555F6B bg */
+
+        --heading-font: Future ND for Nike 365 Cn;
+        --content-font: Trade Gothic for Nike 365;
     }
 
 
@@ -30,9 +33,24 @@
         background: var(--color-green-light);
         color: var(--color-black);
         font-weight: 800;
-        font-size: 24px;
+        font-size: 2rem;
         text-transform: uppercase;
         margin: 0;
+
+        scroll-behavior: smooth;
+    }
+
+    @keyframes SlideRight {
+        from {
+            transform: translateX(-400px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0px);
+            opacity: 1;
+            transform
+        }
     }
 
     p {
@@ -47,6 +65,47 @@
         height: auto;
         object-fit: cover;
     }
+
+    input {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    select {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    label+input {
+        margin-top: 0.5rem;
+    }
+
+
+
+
+    .a:-webkit-any-link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    .headings-banner a:hover {
+        background-color: var(--color-gray-xlight);
+        color: var(--color-black);
+    }
+
+    .footer-headings a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-labels {
+        padding: 1rem;
+    }
+
 
     .visually-hidden {
         clip: rect(0 0 0 0);
@@ -64,7 +123,7 @@
 
     /* TITLE STYLES */
     .title-1 {
-        font-family: Future ND for Nike 365 Cn;
+        font-family: var(--heading-font);
         text-align: left;
         font-weight: 800;
         font-size: 10vw;
@@ -77,10 +136,13 @@
         object-position: 50% 50%;
         z-index: -1;
         padding-top: 6rem;
+        transform: translateX(-400px);
+        animation: SlideRight 2s ease forwards;
+
     }
 
     .title-2 {
-        font-family: Future ND for Nike 365 Cn;
+        font-family: var(--heading-font);
         text-align: right;
         font-weight: 800;
         font-size: 10vw;
@@ -91,9 +153,11 @@
         right: 0;
     }
 
+
+
     /* CONTENT HEADING STYLES */
     .content-heading-left {
-        font-family: Future ND for Nike 365 Cn;
+        font-family: var(--heading-font);
         text-align: left;
         font-weight: 800;
         font-size: 5vw;
@@ -101,14 +165,14 @@
 
     .content-heading-right {
         /* Not in use */
-        font-family: Future ND for Nike 365 Cn;
+        font-family: var(--heading-font);
         text-align: right;
         font-weight: 800;
         font-size: 5vw;
     }
 
     .content-heading-center {
-        font-family: Future ND for Nike 365 Cn;
+        font-family: var(--heading-font);
         text-align: center;
         font-weight: 800;
         font-size: 5vw;
@@ -116,44 +180,46 @@
 
     /* CONTENT BODY STYLES */
     .content-body-left {
-        font-family: Trade Gothic for Nike 365;
+        font-family: var(--content-font);
         font-style: normal;
         font-weight: bold;
         font-size: 2.2vw;
-        line-height: 29px;
         text-align: left;
     }
 
     .content-body-right {
-        font-family: Trade Gothic for Nike 365;
+        font-family: var(--content-font);
         font-style: normal;
         font-weight: bold;
         font-size: 2.2vw;
-        line-height: 29px;
+        /*         line-height: 29px;
+ */
         text-align: right;
     }
 
     .content-body-center {
-        font-family: Trade Gothic for Nike 365;
+        font-family: var(--content-font);
         font-style: normal;
         font-weight: bold;
         font-size: 2.2vw;
-        line-height: 29px;
+        /*         line-height: 29px;
+ */
         text-align: center;
     }
 
     .content-body-4 {
-        font-family: Trade Gothic for Nike 365;
+        font-family: var(--content-font);
         font-style: normal;
         font-weight: bold;
         font-size: 1.75vw;
-        line-height: 29px;
+        /*         line-height: 29px;
+ */
         text-align: center;
         color: var(--color-gray-xlight);
         margin: 0 1.5rem 0 1.5rem;
     }
 
-    .shop-now {
+    .sign-up {
         color: var(--color-white);
         background-color: var(--color-gray);
         text-transform: Capitalize;
@@ -165,7 +231,8 @@
 
         width: 10%;
         padding: 0.3rem 1rem 0.3rem 1rem;
-        border-radius: 40px;
+        /*         border-radius: 40px;
+ */
     }
 
     /* CUSTOMER DETAILS FORM */
@@ -184,6 +251,7 @@
         position: relative;
         text-align: center;
         font-weight: normal;
+        padding: 0 2rem 0 2rem;
     }
 
     .form-heading {
@@ -199,60 +267,35 @@
         position: relative;
         text-align: left;
         font-weight: bold;
+
         margin-left: auto;
         margin-right: auto;
-        padding-top: 1rem;
-
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-labels-sml-dob {
-        font-size: 1.5vw;
-        position: relative;
-        text-align: left;
-        font-weight: bold;
-        padding: 1rem 0 0 0;
+        padding: 1rem 1rem 1rem 1rem;
 
         width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-labels-sml-pref {
-        font-size: 1.5vw;
-        position: relative;
-        bottom: 0;
-        right: 0;
-
-        width: 100%;
-        text-align: left;
-        font-weight: bold;
-        padding: 1rem 0 0 0;
-        /* change padding/margin */
-
         display: flex;
         flex-direction: column;
     }
 
     .form-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        /* equates the column width */
 
-        column-gap: 1rem;
-        row-gap: 0.5rem;
+        column-gap: 0.5rem;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
     }
 
+
     /*     .select {
-        border-radius: 3px;
-        border: 1px solid #efefef;
-        font-family: Future ND for Nike 365 Cn;
-        height: 2rem;
-        font-size: 1.5vw;
-    } */
+            border-radius: 3px;
+            border: 1px solid #efefef;
+            font-family: Future ND for Nike 365 Cn;
+            height: 2rem;
+            font-size: 1.5vw;
+        } */
 
     input::placeholder {
         color: var(--color-gray-light);
@@ -287,7 +330,7 @@
     }
 
     .content-side {
-        width: 50%;
+        width: 100%;
         margin: 1.5rem 0 0 1rem;
     }
 
@@ -297,7 +340,7 @@
     }
 
     .image-side {
-        width: 50%;
+        width: 100%;
     }
 
     .arrow {
@@ -319,10 +362,16 @@
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
 
         column-gap: 1rem;
         row-gap: 1rem;
+    }
+
+    @media screen and (min-width: 700px) {
+        .grid {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     .image-border {
@@ -341,13 +390,13 @@
     }
 
     /*     .form-header {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5%;
-        width: 90%;
-        align-content: center;
-    } */
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+            width: 90%;
+            align-content: center;
+        } */
 
 
 
@@ -356,7 +405,8 @@
     .heading-shoe-wrapper {
         position: relative;
         margin-bottom: 1rem;
-        padding-top: 50px;
+        padding-top: 7rem;
+        margin-top: 20rem;
     }
 
     .energy-boost-img {
@@ -406,12 +456,14 @@
     .banner-wrapper {
         background-color: var(--color-white);
         position: fixed;
+        top: 0;
         width: 100%;
-        z-index: +1;
-        height: 50px;
-        box-sizing: border-box;
+        z-index: +10;
         display: flex;
+
+        box-shadow: 0px 3px 11px 0 var(--color-gray-light);
     }
+
 
 
     .section-content-form {
@@ -430,7 +482,7 @@
         font-size: 1.75vw;
         font-family: Trade Gothic for Nike 365;
         /*         justify-content: space-evenly;
- */
+     */
         text-align: center;
         justify-content: space-between;
     }
@@ -446,6 +498,11 @@
         padding: 0.5rem;
     }
 
+    .nike-logo-footer {
+        width: 15%;
+        padding: 1rem;
+    }
+
     .headings-banner-wrapper {
         width: 100%;
     }
@@ -459,35 +516,62 @@
         width: 100%;
         text-align: center;
     }
+
+    .footer {
+        background-color: var(--color-white);
+        color: var(--color-black);
+        padding: 1rem;
+        z-index: +1;
+        position: relative;
+    }
+
+    .footer-wapper {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .footer-headings {
+        position: relative;
+        list-style: none;
+        display: flex;
+        font-size: 0.8rem;
+
+        justify-content: space-between;
+        align-content: right;
+        flex-direction: column;
+
+        padding-right: 2rem;
+    }
+
+    .homepage {
+        margin-top: 20rem;
+        padding: 20rem;
+    }
 </style>
 
 <!-- Insert Nike headers -->
 
 <head>
     <title>Nike ZoomX Vaporfly 2</title> <!-- fanricon image -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <header id="banner">
         <section class="banner-wrapper">
             <div class="logo-header-wrapper">
-                <a href="#"><img class="nike-logo-banner" src="Logo/NIKE_logo.png" alt="nike-logo-banner"></a>
+                <a href="#homepage"><img class="nike-logo-banner" src="Logo/NIKE_logo.png" alt="nike-logo-banner"></a>
             </div>
             <div class="headings-banner-wrapper">
-                <nav class="banner-headings-split">
+                <nav>
                     <ul class="headings-banner">
-                        <li>
-                            <a href="#" class="list-padding">ENERGY BOOST</a>
-                        </li>
-                        <li>
-                            <a href="#" class="list-padding">FIND YOUR FIT</a>
-                        </li>
-                        <li>
-                            <a href="#" class="list-padding">TRAIN WITH NRC</a>
-                        </li>
-                        <li>
-                            <a href="#" class="list-padding">SIGN UP</a>
-                        </li>
+                        <li><a href="#energy-boost" class="list-padding">ENERGY BOOST</a></li>
+                        <li><a href="#find-your-fit" class="list-padding">FIND YOUR FIT</a></li>
+                        <li><a href="#train-with-nrc" class="list-padding">TRAIN WITH NRC</a></li>
+                        <li><a href="#customer-details" class="list-padding">SIGN UP</a></li>
                     </ul>
                 </nav>
             </div>
@@ -495,13 +579,14 @@
     </header>
 
     <main class="padding">
-        <h1 class="visually-hidden">Nike ZoomX Vaporfly 2</h1>
-        <section class="heading-shoe-wrapper">
+        <section id="homepage" class="heading-shoe-wrapper">
+            <h1 class="visually-hidden">Nike ZoomX Vaporfly 2</h1>
             <div class="title-1" aria-hidden="true">NIKE ZOOM X</div>
             <a href="#" class="image-link"><img class="front-img crop img-adjust center" src="Images/left-.png"
                     alt="Nike ZoomX - left side"></a>
             <!-- how to set image as url? -->
             <div class="title-2" aria-hidden="true">VAPORFLY 2</div>
+            </div>
         </section>
 
         <section class="scroll-wrapper">
@@ -511,15 +596,15 @@
             </div>
 
             <nav class="shop-now-wrapper">
-                <a href="#" class="shop-now sticky">Shop Now</a>
+                <a href="#customer-details" class="sign-up sticky">Sign Up</a>
             </nav>
         </section>
-        <section id="Shop-now">
+        <!--         <section id="Shop-now">
 
-        </section>
+        </section> -->
 
-        <section class="section-wrapper">
-            <section id="Energy-Boost" class="section-content">
+        <section id="energy-boost" class="section-wrapper">
+            <section class="section-content">
                 <div class="content-side">
                     <h1 class="content-heading-left">Energy <span class="green">Boost</span></h1>
                     <p class="content-body-left">Another reason why this shoe is so fast: Our patented ZoomX foam, runs
@@ -533,8 +618,8 @@
             </section>
         </section>
 
-        <section class="section-wrapper">
-            <section id="find-your-fit" class="section-content">
+        <section class="section-wrapper" id="find-your-fit">
+            <section class="section-content">
                 <div class="content-side">
                     <h1 class="content-heading-right">Find your <span class="green">fit</span></h1>
                     <p class="content-body-right">A redesigned mesh upper conforms to your foot and offers increased
@@ -547,8 +632,8 @@
             </section>
         </section>
 
-        <section class="section-wrapper">
-            <section id="full-screen-img-model" class="section-content">
+        <section class="section-wrapper" id="full-screen-img-model">
+            <section class="section-content">
                 <div class="full-screen-img">
                     <a href="#"><img class="full-screen-img" src="Images/0d40a2d3-18f9-4d5c-8d9e-7622aa21b152.jpg"
                             alt="Nke ZoomX - model close up"></a>
@@ -556,8 +641,8 @@
             </section>
         </section>
 
-        <section class="description-wrapper">
-            <section id="zoomX-description">
+        <section class="description-wrapper" id="zoomX-description">
+            <section>
                 <h1 class="content-heading-center">Nike <span class="green">ZoomX</span> Vaporfly <span
                         class="green">2</span>
                 </h1>
@@ -567,8 +652,8 @@
             </section>
         </section>
 
-        <section class="img-section-wrapper">
-            <section id="full-screen-img-runner" class="section-content">
+        <section class="img-section-wrapper" id="full-screen-img-runner">
+            <section class="section-content">
                 <div class="full-screen-img">
                     <a href="#"><img class="full-screen-img"
                             src="Images/running-fast-zoomx-vaporfly-next-2-imp-launch-m-com-enhanced-pdp.jpg"
@@ -590,7 +675,7 @@
             <a href="#"><img class="full-screen-img" src="Images/train-with-nrc-cropped.png" alt="Train with NRC"></a>
         </section>
 
-        <section id="customer-details" class="customer-details-wrapper grid">
+        <section class="customer-details-wrapper grid">
             <div class="grid">
                 <a href="#"><img class="image-border"
                         src="Images/mulit-images/zoomx-vaporfly-next-2-racing-shoe-tdbRhZ.jpg" alt="Image 1"></a>
@@ -605,10 +690,10 @@
                 <a href="#"><img class="image-border" src="Images/mulit-images/53e8bf6a-c8ef-4842-b2b5-2ffb4ea0bc3f.jpg"
                         alt="Image 6"></a>
             </div>
-            <div class="image-border">
-                <form action="#" method="post" class="customer-details-form">
+            <div id="customer-details" class="customer-details-form">
+                <form action="#" method="post" class="image-border">
                     <div class="form-logo">
-                        <a href="#"><img class="logo" src="Logo/Nike-Tick.png" alt="Nike Logo - tick"></a>
+                        <a href="#homepage"><img class="logo" src="Logo/Nike-Tick.png" alt="Nike Logo - tick"></a>
                     </div>
                     <div>
                         <h1 class="form-heading">Be the first to know</h1>
@@ -623,12 +708,12 @@
                         <label for="name"> Full Name*</label>
                         <input type="text" name="email" id="email" placeholder="First Name" required>
                     </div>
-                    <section class="form-grid">
-                        <div class="form-labels-sml-dob">
+                    <div class="form-grid">
+                        <div class="form-labels">
                             <label for="dob">Date of Birth*</label>
                             <input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy" required>
                         </div>
-                        <div class="form-labels-sml-pref">
+                        <div class="form-labels">
                             <label for="pref-select">Shopping Preference*</label>
                             <select name="preference" id="pref-select">
                                 <option value="">Choose</option>
@@ -637,22 +722,28 @@
                             </select>
 
                         </div>
-                    </section>
-
-
-
-
-
-
-
+                    </div>
                 </form>
-
-
-
             </div>
         </section>
 
     </main>
+
+    <footer id="nav-footer" class="footer">
+        <div class="footer-wapper">
+            <div class="nike-logo-footer">
+                <a href="#homepage"><img src="Logo/NIKE_logo.png" alt="Nike-logo"></a>
+                <a href="#homepage"><img src="Logo/Nike-jumping-logo.png" alt="Nikie-jumping-log"></a>
+            </div>
+            <ul class="footer-headings">
+                <li class="footer-labels"><a href="#">About</li></a>
+                <li class="footer-labels"><a href="#homepage">Homepage</a></li>
+                <li class="footer-labels"><a href="#">Feedback</li></a>
+            </ul>
+
+        </div>
+    </footer>
+
 </body>
 
 </html>
