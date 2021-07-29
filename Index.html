@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<style>
+    :root {
+        /* asign vars */
+        --color-green: #44BBA1;
+        --color-green-light: #f5fffd;
+
+        --color-black: #000000;
+        --color-gray: #575757;
+        --color-gray-blue: #555F6B;
+        --color-gray-light: #9F9F9F;
+        --color-gray-blight: #DCDCDF;
+        --color-gray-xlight: #EFEFEF;
+        --color-white-off: #F2F2F2;
+        --color-white: #FCFCFC;
+        /* All v similar colors. necessary? */
+        /* contrast ratio fail to #555F6B bg */
+    }
+
+
+    * {
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+
+
+    body {
+        font-family: Future ND for Nike 365 Cn;
+        background: var(--color-green-light);
+        color: var(--color-black);
+        font-weight: 800;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    p {
+        font-family: Future ND for Nike 365 Cn;
+        color: var(--color-black);
+        text-align: center;
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .green {
+        color: var(--color-green);
+    }
+
+    /* TITLE STYLES */
+    .title-1 {
+        font-family: Future ND for Nike 365 Cn;
+        text-align: left;
+        font-weight: 800;
+        font-size: 10vw;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: contain;
+        object-position: 50% 50%;
+        z-index: -1;
+        padding-top: 6rem;
+    }
+
+    .title-2 {
+        font-family: Future ND for Nike 365 Cn;
+        text-align: right;
+        font-weight: 800;
+        font-size: 10vw;
+
+        z-index: +1;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* CONTENT HEADING STYLES */
+    .content-heading-left {
+        font-family: Future ND for Nike 365 Cn;
+        text-align: left;
+        font-weight: 800;
+        font-size: 5vw;
+    }
+
+    .content-heading-right {
+        /* Not in use */
+        font-family: Future ND for Nike 365 Cn;
+        text-align: right;
+        font-weight: 800;
+        font-size: 5vw;
+    }
+
+    .content-heading-center {
+        font-family: Future ND for Nike 365 Cn;
+        text-align: center;
+        font-weight: 800;
+        font-size: 5vw;
+    }
+
+    /* CONTENT BODY STYLES */
+    .content-body-left {
+        font-family: Trade Gothic for Nike 365;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.2vw;
+        line-height: 29px;
+        text-align: left;
+    }
+
+    .content-body-right {
+        font-family: Trade Gothic for Nike 365;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.2vw;
+        line-height: 29px;
+        text-align: right;
+    }
+
+    .content-body-center {
+        font-family: Trade Gothic for Nike 365;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.2vw;
+        line-height: 29px;
+        text-align: center;
+    }
+
+    .content-body-4 {
+        font-family: Trade Gothic for Nike 365;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.75vw;
+        line-height: 29px;
+        text-align: center;
+        color: var(--color-gray-xlight);
+        margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .shop-now {
+        color: var(--color-white);
+        background-color: var(--color-gray);
+        text-transform: Capitalize;
+        font-weight: normal;
+        font-size: 2.75vw;
+        text-align: center;
+
+        z-index: +1;
+
+        width: 10%;
+        padding: 0.3rem 1rem 0.3rem 1rem;
+        border-radius: 40px;
+    }
+
+    /* CUSTOMER DETAILS FORM */
+    .form-logo {
+        font-size: 3vw;
+        transform: scale(1, 1.5);
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .form-body {
+        font-size: 1vw;
+        position: relative;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .form-heading {
+        font-size: 3vw;
+        transform: scale(1, 1.5);
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .form-labels {
+        font-size: 1.5vw;
+        position: relative;
+        text-align: left;
+        font-weight: bold;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1rem;
+
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-labels-sml-dob {
+        font-size: 1.5vw;
+        position: relative;
+        text-align: left;
+        font-weight: bold;
+        padding: 1rem 0 0 0;
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-labels-sml-pref {
+        font-size: 1.5vw;
+        position: relative;
+        bottom: 0;
+        right: 0;
+
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        padding: 1rem 0 0 0;
+        /* change padding/margin */
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*     .select {
+        border-radius: 3px;
+        border: 1px solid #efefef;
+        font-family: Future ND for Nike 365 Cn;
+        height: 2rem;
+        font-size: 1.5vw;
+    } */
+
+    input::placeholder {
+        color: var(--color-gray-light);
+        font-size: 1.25vw;
+        text-transform: none;
+        padding-left: 2.5%;
+    }
+
+    .split-section-form {
+        width: 50%;
+    }
+
+
+    /* CONTENT ALIGNMENT */
+    .front-img {
+        transform: rotate(-20deg);
+    }
+
+    .image-link {
+        display: block;
+    }
+
+    .section-content {
+        display: flex;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .content-side {
+        width: 50%;
+        margin: 1.5rem 0 0 1rem;
+    }
+
+    .content-above {
+        width: 100%;
+        align-content: center;
+    }
+
+    .image-side {
+        width: 50%;
+    }
+
+    .arrow {
+        margin: 0;
+    }
+
+    .sticky {
+        position: fixed;
+        bottom: 1rem;
+        right: 2rem;
+        width: 18%;
+    }
+
+    .multi-images {
+        width: 50%;
+        margin: 1 0.5 1 0.5;
+        background-color: var(--color-gray-xlight);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    .image-border {
+        border: solid;
+        border-color: var(--color-black);
+        border-width: medium;
+    }
+
+    .logo {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        width: 15%;
+    }
+
+    /*     .form-header {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        width: 90%;
+        align-content: center;
+    } */
+
+
+
+
+    /* SECTION WRAPPERS */
+    .heading-shoe-wrapper {
+        position: relative;
+        margin-bottom: 1rem;
+        padding-top: 50px;
+    }
+
+    .energy-boost-img {
+        margin-left: 1rem;
+    }
+
+    .section-wrapper {
+        margin-top: 5rem;
+    }
+
+    .img-section-wrapper {
+        margin: 0;
+    }
+
+    .nrc-section-wrapper {
+        background-color: var(--color-gray-blue);
+        width: 100%;
+        padding-top: 4rem;
+        vertical-align: bottom;
+    }
+
+    .full-screen-img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+    .scroll-wrapper {
+        width: 100%;
+    }
+
+    .description-wrapper {
+        padding: 2rem 1rem 2rem 1rem;
+        background-color: #D9DCDF;
+    }
+
+    .customer-details-wrapper {
+        background-color: var(--color-gray-xlight);
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .customer-details-form {
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .banner-wrapper {
+        background-color: var(--color-white);
+        position: fixed;
+        width: 100%;
+        z-index: +1;
+        height: 50px;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+
+    .section-content-form {
+        /* not in use */
+        display: flex;
+    }
+
+    .headings-banner {
+        position: relative;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+
+        font-size: 1.75vw;
+        font-family: Trade Gothic for Nike 365;
+        /*         justify-content: space-evenly;
+ */
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .logo-header-wrapper {
+        position: relative;
+        left: 0;
+        width: 10%;
+    }
+
+    .nike-logo-banner {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .headings-banner-wrapper {
+        width: 100%;
+    }
+
+    .padding {
+        position: relative;
+    }
+
+    .list-padding {
+        padding: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+<!-- Insert Nike headers -->
+
+<head>
+    <title>Nike ZoomX Vaporfly 2</title> <!-- fanricon image -->
+</head>
+
+<body>
+    <header id="banner">
+        <section class="banner-wrapper">
+            <div class="logo-header-wrapper">
+                <a href="#"><img class="nike-logo-banner" src="Logo/NIKE_logo.png" alt="nike-logo-banner"></a>
+            </div>
+            <div class="headings-banner-wrapper">
+                <nav class="banner-headings-split">
+                    <ul class="headings-banner">
+                        <li>
+                            <a href="#" class="list-padding">ENERGY BOOST</a>
+                        </li>
+                        <li>
+                            <a href="#" class="list-padding">FIND YOUR FIT</a>
+                        </li>
+                        <li>
+                            <a href="#" class="list-padding">TRAIN WITH NRC</a>
+                        </li>
+                        <li>
+                            <a href="#" class="list-padding">SIGN UP</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <main class="padding">
+        <h1 class="visually-hidden">Nike ZoomX Vaporfly 2</h1>
+        <section class="heading-shoe-wrapper">
+            <div class="title-1" aria-hidden="true">NIKE ZOOM X</div>
+            <a href="#" class="image-link"><img class="front-img crop img-adjust center" src="Images/left-.png"
+                    alt="Nike ZoomX - left side"></a>
+            <!-- how to set image as url? -->
+            <div class="title-2" aria-hidden="true">VAPORFLY 2</div>
+        </section>
+
+        <section class="scroll-wrapper">
+            <div class="scroll">
+                <p class="content-body-center">Scroll to explore</p>
+                <p class="arrow">&#8659</p>
+            </div>
+
+            <nav class="shop-now-wrapper">
+                <a href="#" class="shop-now sticky">Shop Now</a>
+            </nav>
+        </section>
+        <section id="Shop-now">
+
+        </section>
+
+        <section class="section-wrapper">
+            <section id="Energy-Boost" class="section-content">
+                <div class="content-side">
+                    <h1 class="content-heading-left">Energy <span class="green">Boost</span></h1>
+                    <p class="content-body-left">Another reason why this shoe is so fast: Our patented ZoomX foam, runs
+                        heel-to-toe.
+                        Lightweight and incredibly responsive, ZoomX foam has a high rate of energy return for an extra
+                        spring
+                        with every step.</p>
+                </div>
+                <a href="#" class="image-side"><img class="energy-boost-img"
+                        src="Images/680cb411-6741-429d-80bc-8e9beb4578e2.jpg" alt="Nike ZoomX - heel"></a>
+            </section>
+        </section>
+
+        <section class="section-wrapper">
+            <section id="find-your-fit" class="section-content">
+                <div class="content-side">
+                    <h1 class="content-heading-right">Find your <span class="green">fit</span></h1>
+                    <p class="content-body-right">A redesigned mesh upper conforms to your foot and offers increased
+                        comfort,
+                        containment, and breathability, because happy feet are fast feet.</p>
+                </div>
+                <a href="#" class="image-side"><img class="energy-boost-img"
+                        src="Images/zoomx-vaporfly-next-2-racing-shoe-tdbRhZ-2-removebg-preview.png"
+                        alt="Nike ZoomX - toe"></a>
+            </section>
+        </section>
+
+        <section class="section-wrapper">
+            <section id="full-screen-img-model" class="section-content">
+                <div class="full-screen-img">
+                    <a href="#"><img class="full-screen-img" src="Images/0d40a2d3-18f9-4d5c-8d9e-7622aa21b152.jpg"
+                            alt="Nke ZoomX - model close up"></a>
+                </div>
+            </section>
+        </section>
+
+        <section class="description-wrapper">
+            <section id="zoomX-description">
+                <h1 class="content-heading-center">Nike <span class="green">ZoomX</span> Vaporfly <span
+                        class="green">2</span>
+                </h1>
+                <p class="content-body-center">Whatever boundary you’re pushing, we’re here to help you become a better
+                    runner. Guided Runs in the Nike Run Club app offer encouragement and real-time coaching to help you
+                    run smarter and achieve your running goals.</p>
+            </section>
+        </section>
+
+        <section class="img-section-wrapper">
+            <section id="full-screen-img-runner" class="section-content">
+                <div class="full-screen-img">
+                    <a href="#"><img class="full-screen-img"
+                            src="Images/running-fast-zoomx-vaporfly-next-2-imp-launch-m-com-enhanced-pdp.jpg"
+                            alt="Nike ZoomX -  street runner"></a>
+                </div>
+            </section>
+        </section>
+
+
+        <section id="train-with-nrc" class="nrc-section-wrapper">
+            <div class="content-above">
+                <h1 class="content-heading-center">Train <span class="green">your best</span> with <span
+                        class="green">NRC</span></h1>
+                <p class="content-body-4">Whatever boundary you’re pushing, we’re here to help you become a better
+                    runner. Guided Runs in the Nike Run Club app offer encouragement and real-time coaching to help you
+                    run smarter and achieve your running goals.
+                </p>
+            </div>
+            <a href="#"><img class="full-screen-img" src="Images/train-with-nrc-cropped.png" alt="Train with NRC"></a>
+        </section>
+
+        <section id="customer-details" class="customer-details-wrapper grid">
+            <div class="grid">
+                <a href="#"><img class="image-border"
+                        src="Images/mulit-images/zoomx-vaporfly-next-2-racing-shoe-tdbRhZ.jpg" alt="Image 1"></a>
+                <a href="#"><img class="image-border" src="Images/mulit-images/7c105c02-3db8-4283-b2b7-a1bd7f244930.jpg"
+                        alt="Image 2"></a>
+                <a href="#"><img class="image-border" src="Images/mulit-images/87b38af6-df43-4b21-bb42-8c6fcbce923d.jpg"
+                        alt="Image 3"></a>
+                <a href="#"><img class="image-border" src="Images/mulit-images/228c9922-686e-443d-b04b-16857e9af198.jpg"
+                        alt="Image 4"></a>
+                <a href="#"><img class="image-border"
+                        src="Images/mulit-images/zoomx-vaporfly-next-2-racing-shoe-tdbRhZ-1.jpg" alt="Image 5"></a>
+                <a href="#"><img class="image-border" src="Images/mulit-images/53e8bf6a-c8ef-4842-b2b5-2ffb4ea0bc3f.jpg"
+                        alt="Image 6"></a>
+            </div>
+            <div class="image-border">
+                <form action="#" method="post" class="customer-details-form">
+                    <div class="form-logo">
+                        <a href="#"><img class="logo" src="Logo/Nike-Tick.png" alt="Nike Logo - tick"></a>
+                    </div>
+                    <div>
+                        <h1 class="form-heading">Be the first to know</h1>
+                        <p class="form-body">Sign up for Nike emails to be the first to see insppiring content, news and
+                            exclusive offers.</p>
+                    </div>
+                    <div class="form-labels">
+                        <label for="email">Email address*</label>
+                        <input type="text" name="email" id="email" placeholder="Email address" required>
+                    </div>
+                    <div class="form-labels">
+                        <label for="name"> Full Name*</label>
+                        <input type="text" name="email" id="email" placeholder="First Name" required>
+                    </div>
+                    <section class="form-grid">
+                        <div class="form-labels-sml-dob">
+                            <label for="dob">Date of Birth*</label>
+                            <input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy" required>
+                        </div>
+                        <div class="form-labels-sml-pref">
+                            <label for="pref-select">Shopping Preference*</label>
+                            <select name="preference" id="pref-select">
+                                <option value="">Choose</option>
+                                <option value="mens">Men's</option>
+                                <option value="womens">Women's</option>
+                            </select>
+
+                        </div>
+                    </section>
+
+
+
+
+
+
+
+                </form>
+
+
+
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
