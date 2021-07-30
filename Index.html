@@ -24,13 +24,12 @@
 
         --color-black: #000000;
         --color-gray: #575757;
-        --color-gray-blue: #555F6B;
+        --color-gray-blue: #4F5A63;
         --color-gray-light: #9F9F9F;
         --color-gray-xlight: #DFDFDF;
         --color-gray-blight: #DCDCDF;
         --color-white: #FCFCFC;
-        /* All v similar colors. necessary? */
-        /* contrast ratio fail to #555F6B bg */
+
 
         --heading-font: 'FutureND', Arial;
         --content-font: 'TradeGothic', Arial;
@@ -222,7 +221,7 @@
         z-index: -1;
         padding-top: 6rem;
         transform: translateX(-400px);
-        animation: SlideRight 2s ease forwards;
+        animation: SlideRight 2s ease;
 
     }
 
@@ -238,7 +237,7 @@
         bottom: 0;
         right: 0;
 
-        animation: SlideLeft 2s ease forwards;
+        animation: SlideLeft 2s ease;
 
     }
 
@@ -543,7 +542,7 @@
     }
 
     .section-wrapper {
-        margin-top: 5rem;
+        margin-top: 4rem;
     }
 
     .img-section-wrapper {
@@ -730,15 +729,19 @@
     </header>
 
     <main class="padding">
-        <section id="homepage" class="heading-shoe-wrapper">
+        <section id="homepage" class=" heading-shoe-wrapper">
             <h1 class="visually-hidden">Nike ZoomX Vaporfly 2</h1>
-            <div class="title-1 gradient-text-1" aria-hidden="true">NIKE ZOOM X NIKE ZOOM X NIKE ZOOM X NIKE
+            <div class="parallax title-1 gradient-text-1" data-rellax-speed="2" aria-hidden="true">NIKE ZOOM X NIKE
+                ZOOM X NIKE ZOOM X NIKE
                 ZOOM X NIKE
                 ZOOM X</div>
-            <a href="#" class="image-link"><img class="homepage-img center drop-shadow" src="Images/left-.png"
+            <a href="#" class=" parallax image-link" data-rellax-speed="8"><img
+                    class="tilt homepage-img center drop-shadow" src="Images/left-.png"
                     alt="Nike ZoomX - left side"></a>
             <!-- how to set image as url? -->
-            <div class="title-2 gradient-text-2" aria-hidden="true">VAPORFLY 2 VAPORFLY 2 VAPORFLY 2 VAPORFLY 2</div>
+            <div class="parallax title-2 gradient-text-2" data-rellax-speed="4" aria-hidden="true">VAPORFLY 2 VAPORFLY
+                2
+                VAPORFLY 2 VAPORFLY 2</div>
             </div>
         </section>
 
@@ -917,7 +920,17 @@
         })
         })
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="libs/vanilla-tilt/vanilla-tilt.min.js"></script>
+    <script>
+        // Accepts any class name
+        const rellax = new Rellax('.parallax', {
+            center: false
+        });
 
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll(".tilt"));
+    </script>
 </body>
 
 </html>
