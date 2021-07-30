@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <style>
+    @import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+
+    @font-face {
+        font-family: 'FutureND';
+        src: url('./Font/FutraForNike.oft');
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'TradeGothic';
+        src: url('./Font/TradeGothicForNike365.otf');
+        font-display: swap;
+    }
+
+
+
+
     :root {
         /* asign vars */
         --color-green: #44BBA1;
@@ -17,8 +34,8 @@
         /* All v similar colors. necessary? */
         /* contrast ratio fail to #555F6B bg */
 
-        --heading-font: Future ND for Nike 365 Cn;
-        --content-font: Trade Gothic for Nike 365;
+        --heading-font: 'FutureND', Arial;
+        --content-font: 'TradeGothic', Arial;
     }
 
 
@@ -27,17 +44,21 @@
         text-decoration: none;
     }
 
+    html {
+        scroll-behavior: smooth;
+
+    }
+
 
     body {
-        font-family: Future ND for Nike 365 Cn;
+        font-family: 'FutureND';
         background: var(--color-green-light);
         color: var(--color-black);
         font-weight: 800;
         font-size: 2rem;
-        text-transform: uppercase;
+        /*         text-transform: uppercase;
+ */
         margin: 0;
-
-        scroll-behavior: smooth;
     }
 
     @keyframes SlideRight {
@@ -49,7 +70,18 @@
         to {
             transform: translateX(0px);
             opacity: 1;
-            transform
+        }
+    }
+
+    @keyframes SlideRightLoop {
+        from {
+            transform: translateX(-400px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0px);
+            opacity: 1;
         }
     }
 
@@ -76,12 +108,16 @@
         padding: 0.5rem 1rem;
         font-size: 1rem;
         max-width: 100%;
+        flex-grow: 1;
     }
 
     label+input {
         margin-top: 0.5rem;
     }
 
+    label+select {
+        margin-top: 0.5rem;
+    }
 
 
 
@@ -128,6 +164,8 @@
         font-weight: 800;
         font-size: 10vw;
 
+        color: linear-gradient(#000000, #FFFFFF);
+
         position: absolute;
         top: 0;
         left: 0;
@@ -146,6 +184,8 @@
         text-align: right;
         font-weight: 800;
         font-size: 10vw;
+
+        color: linear-gradient(#000000, #FFFFFF);
 
         z-index: +1;
         position: absolute;
@@ -231,8 +271,8 @@
 
         width: 10%;
         padding: 0.3rem 1rem 0.3rem 1rem;
-        /*         border-radius: 40px;
- */
+        border-radius: 40px;
+
     }
 
     /* CUSTOMER DETAILS FORM */
@@ -714,7 +754,7 @@
                             <input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy" required>
                         </div>
                         <div class="form-labels">
-                            <label for="pref-select">Shopping Preference*</label>
+                            <label for="pref-select">Preference*</label>
                             <select name="preference" id="pref-select">
                                 <option value="">Choose</option>
                                 <option value="mens">Men's</option>
