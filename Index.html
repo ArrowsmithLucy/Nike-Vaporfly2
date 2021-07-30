@@ -521,10 +521,11 @@
 
         font-size: 1.75vw;
         font-family: Trade Gothic for Nike 365;
-        /*         justify-content: space-evenly;
-     */
+
         text-align: center;
         justify-content: space-between;
+
+
     }
 
     .logo-header-wrapper {
@@ -555,6 +556,10 @@
         padding: 1.5rem;
         width: 100%;
         text-align: center;
+    }
+
+    .list-padding.active {
+        background-color: var(--color-gray-xlight);
     }
 
     .footer {
@@ -783,6 +788,26 @@
 
         </div>
     </footer>
+
+    <script>
+        /* Javascript */
+        const navItems = document.querySelectorAll('.headings-banner a')
+        console.log(navItems)
+
+        function ClearClasses(items) {
+            items.forEach(item => {
+                item.classList.remove('active')
+            })
+        }
+
+        navItems.forEach(item => {
+/*             console.log(item)
+ */        item.addEventListener('click', () => {
+            ClearClasses(navItems)
+            item.classList.add('active')
+        })
+        })
+    </script>
 
 </body>
 
